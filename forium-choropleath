@@ -1,0 +1,13 @@
+# Create a base map
+m_6 = folium.Map(location=[42.32,-71.0589], tiles='cartodbpositron', zoom_start=12)
+
+# Add a choropleth map to the base map
+Choropleth(geo_data=districts.__geo_interface__, 
+           data=plot_dict, 
+           key_on="feature.id", 
+           fill_color='YlGnBu', 
+           legend_name='Major criminal incidents (Jan-Aug 2018)'
+          ).add_to(m_6)
+
+# Display the map
+m_6
